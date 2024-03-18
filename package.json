@@ -1,0 +1,39 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"cd frontend && npm run dev\" \"cd server && npm run dev\" ",
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "data:import": "node backend/node seeder",
+    "data:destroy": "node backend/node seeder -d",
+    "client": "npm run dev --prefix client",
+    "build":"npm install && npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "keywords": [],
+  "author": "Dada",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^8.2.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.2",
+    "express": "^4.18.2",
+    "express-session": "^1.18.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.1.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.9",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "stripe": "^14.18.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21"
+  }
+}
